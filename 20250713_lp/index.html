@@ -5,98 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AIプログラミング学習コミュニティ</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@700&display=swap');
+
+        :root {
+            --bg-color: #1a1d24;
+            --primary-color: #00aaff;
+            --text-color: #ecf0f1;
+            --card-bg: #2c3e50;
+            --header-bg: #23272a;
+            --footer-bg: #23272a;
+            --shadow-color: rgba(0, 170, 255, 0.5);
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6;
-            color: #333;
+            background-color: var(--bg-color);
+            color: var(--text-color);
         }
         .container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             padding: 20px;
         }
         header {
             text-align: center;
-            padding: 40px 20px;
-            background-color: #9acd32;
-            color: #ecf0f1;
+            padding: 60px 20px;
+            background: var(--header-bg);
+            border-bottom: 3px solid var(--primary-color);
         }
         .header-image {
-            max-width: 300px;
+            max-width: 250px;
             width: 100%;
             height: auto;
-            border-radius: 0;
-            margin-bottom: 20px;
+            border-radius: 50%;
+            margin-bottom: 25px;
+            border: 5px solid var(--primary-color);
+            box-shadow: 0 0 25px var(--shadow-color);
         }
         header h1 {
             margin: 0;
-            font-size: 2.8em;
+            font-family: 'Roboto', sans-serif;
+            font-size: 3em;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
         header p {
-            font-size: 1.2em;
-            opacity: 0.9;
+            font-size: 1.3em;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 15px auto 0 auto;
         }
         .main-cta {
             display: inline-block;
-            background-color: #adff2f;
-            color: #333;
-            padding: 15px 30px;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 15px 35px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 50px;
             font-size: 1.2em;
             font-weight: bold;
-            margin-top: 20px;
-            transition: background-color;} 0.3s;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: 2px solid var(--primary-color);
         }
         .main-cta:hover {
-            background-color: #7fff00;
+            background: transparent;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
         section {
-            padding: 40px 20px;
-            border-bottom: 1px solid #e0e0e0;
+            padding: 60px 20px;
+            border-bottom: 1px solid #34495e;
         }
         section:last-child {
             border-bottom: none;
         }
         h2 {
             text-align: center;
-            font-size: 2.2em;
-            margin-bottom: 40px;
-            color: #6b8e23;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
         }
         .features {
             display: flex;
             justify-content: space-around;
-            gap: 20px;
+            gap: 30px;
             text-align: center;
         }
         .feature {
             flex: 1;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-color);
+        }
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.4);
         }
         .feature h3 {
-            font-size: 1.4em;
-            color: #6b8e23;
+            font-size: 1.6em;
+            color: var(--text-color);
+            margin-bottom: 15px;
         }
         .cta-section {
             text-align: center;
-            background-color: #ffffff;
+            background-color: transparent;
+            padding: 80px 20px;
         }
         .cta-section p {
-            font-size: 1.1em;
+            font-size: 1.2em;
             margin-bottom: 30px;
         }
         footer {
             text-align: center;
-            padding: 20px;
-            background-color: #9acd32;
-            color: #ecf0f1;
+            padding: 30px 20px;
+            background-color: var(--footer-bg);
+            color: var(--text-color);
+            opacity: 0.7;
+            border-top: 1px solid #34495e;
         }
 
         @media (max-width: 768px) {
@@ -104,7 +141,10 @@
                 flex-direction: column;
             }
             header h1 {
-                font-size: 2.2em;
+                font-size: 2.4em;
+            }
+            h2 {
+                font-size: 2em;
             }
         }
     </style>
@@ -113,7 +153,7 @@
 
     <header>
         <img src="ダウンロード.png" alt="AIコミュニティのロゴ" class="header-image">
-        <p style="font-size: 2.8em; color: #000000; text-align: center; margin: 0;">kyota</p>
+        <p style="font-size: 2.2em; color: #ecf0f1; text-align: center; margin: 0 0 20px 0; font-weight: bold;">kyota</p>
         <h1>未来を創る、AI開発者のためのコミュニティ</h1>
         <p>初心者から実践者まで、共に成長し、最新情報を交換する場。</p>
     </header>
